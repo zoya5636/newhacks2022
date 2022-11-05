@@ -15,8 +15,8 @@ const vonage = new Vonage({
 })
 
 const from = "15815347282"
-const to = "*"
-const text = 'A text message sent using the Vonage SMS API- Sara'
+const to = "16476310888"
+const text = 'A text message sent using the Vonage SMS API- Faatima'
 
 vonage.message.sendSms(from, to, text, (err, responseData) => {
     if (err) {
@@ -34,7 +34,7 @@ let handleRequest = (request, response) => {
     response.writeHead(200, {
         'Content-Type': 'text/plain'
     });
-    response.write('Hi There! I am Sara');
+    response.write('Hi There! I am Faatima');
     response.end();
 };
 
