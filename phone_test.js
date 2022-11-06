@@ -15,10 +15,10 @@ const vonage = new Vonage({
 })
 
 const from = "15815347282"
-const to = "***"
-const text = 'A text message sent using the Vonage SMS API- Nilofer'
+const to = "****" //REMOVE MEEEEEEEEE
+const text = 'A text message sent using the Vonage SMS API'
 
-vonage.message.sendSms(from, to, text, (err, responseData) => {
+/*vonage.message.sendSms(from, to, text, (err, responseData) => {
     if (err) {
         console.log(err);
     } else {
@@ -28,14 +28,12 @@ vonage.message.sendSms(from, to, text, (err, responseData) => {
             console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
         }
     }
+})*/
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + `/index.html`)
 })
-
-let handleRequest = (request, response) => {
-    response.writeHead(200, {
-        'Content-Type': 'text/plain'
-    });
-    response.write('Hi There! I am Sara');
-    response.end();
-};
-
-http.createServer(handleRequest).listen(8000);
+  
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
