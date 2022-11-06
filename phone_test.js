@@ -7,7 +7,7 @@ const port = 3000
 
 let http = require('http');
 
-//app.use(express.static('directory'))
+app.use(express.static('../newhacks2022'))
 
 const vonage = new Vonage({
   apiKey: "b2406ad6",
