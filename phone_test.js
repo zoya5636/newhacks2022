@@ -15,8 +15,8 @@ const vonage = new Vonage({
 })
 
 const from = "15815347282"
-const to = "*"
-const text = 'A text message sent using the Vonage SMS API- Sara'
+const to = "***"
+const text = 'A text message sent using the Vonage SMS API- Nilofer'
 
 vonage.message.sendSms(from, to, text, (err, responseData) => {
     if (err) {
