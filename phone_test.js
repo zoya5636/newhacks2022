@@ -9,13 +9,25 @@ let http = require('http');
 
 app.use(express.static('../newhacks2022'))
 
+class Contact {
+    name;
+    phoneNumber;
+    frequency;
+    days_until_contact; 
+    birth_month;
+    birth_day;
+    birth_year;
+    days_since_last_contact;
+    constructor() {}
+}
+
 const vonage = new Vonage({
   apiKey: "b2406ad6",
   apiSecret: "Dfyp1Lji55NI75Zy"
 })
 
 const from = "15815347282"
-const to = "16576310888" //REMOVE MEEEEEEEEE
+const to = "****" //REMOVE MEEEEEEEEE
 const text = 'A text message sent using the Vonage SMS API'
 
 /*vonage.message.sendSms(from, to, text, (err, responseData) => {
@@ -29,6 +41,16 @@ const text = 'A text message sent using the Vonage SMS API'
         }
     }
 })*/
+
+function enter() {
+    const Http = new XMLHttpRequest();
+    url='http://localhost:3000';
+    Http.open("GET", url, true);
+    Http.onreadystatechange = (e) => {
+        let person = prompt("Please enter your name");
+    }
+    Http.send(null);
+  }
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + `/index.html`)
